@@ -27,12 +27,9 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
-BookManegementSolution/BookManagement/obj
-BookManegementSolution/BookManagement.DAL/obj
-BookManegementSolution/BookManagement.BLL/obj
-BookManegementSolution/BookManagement/bin
-BookManegementSolution/BookManagement.DAL/bin
-BookManegementSolution/BookManagement.BLL/bin
+**/**/obj
+
+**/**/bin
 
 # Visual Studio 2015
 .vs/
