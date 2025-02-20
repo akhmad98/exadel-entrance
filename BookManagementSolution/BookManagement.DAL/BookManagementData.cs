@@ -1,6 +1,6 @@
 ﻿namespace BookManagement.DAL;
 
-public class Class1
+public class BookManagementData
 {
 
 }
