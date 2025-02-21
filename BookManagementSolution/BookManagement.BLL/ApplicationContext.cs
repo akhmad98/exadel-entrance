@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using BookManagement.DAL.Data;
-using BookManagement.DAL.Maps;
+using BookManagement.DAL.Data.Maps;
 
 namespace BookManagement.BLL
 {
@@ -14,8 +14,8 @@ namespace BookManagement.BLL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            new UsersMap(modelBuilder.Entity<Users>);
-            new BooksMap(modelBuilder.Entity<Books>);
+            new UsersMap(modelBuilder.Entity<Users>());
+            new BooksMap(modelBuilder.Entity<Books>());
         }
     }
 }

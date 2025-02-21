@@ -13,8 +13,11 @@ namespace BookManagement.DAL.Data.Maps
         {
             entityTypeBuilder.HasKey(p => p.Id);
             entityTypeBuilder.Property(p => p.Username).IsRequired();
-            entityTypeBuilder.Property(p => p.Password).IsRequired();
-            entityTypeBuilder.Property(p => p.EmailAddress).IsRequired();
+            entityTypeBuilder.Property(p => p.Password)
+                .HasMaxLength(18)
+                .IsRequired();
+            entityTypeBuilder.Property(p => p.EmailAddress)
+                .IsRequired();
             entityTypeBuilder.Property(p => p.DateOfJoinng).IsRequired();
         }
     }
