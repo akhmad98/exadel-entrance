@@ -1,15 +1,17 @@
 using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore;
+using BookManagement.BLL;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-// var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 // Connection string setting DBContext
-// builder.Services.AddDbContext<ApplicationContext>
-//      (options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<ApplicationContext>
+     (options => options.UseSqlServer(connectionString));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
