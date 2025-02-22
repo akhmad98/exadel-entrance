@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using BookManagement.DAL.Data;
 using BookManagement.DAL.Data.DTOs;
@@ -10,11 +11,11 @@ namespace BookManagement.BLL.Interfaces
 {
     public interface IBRepository : IRepository<Books>
     {
-        BooksDTO GetById(int id);
-        private BooksDTO GetByTitle(int id);
+        Task<ActionResult<Books>> GetById(int id);
+        private Task<ActionResult<Books>> GetByTitle(string title);
         // Books GetAllBookTitlesFromMostToLess();
-        BooksDTO Update(ICreateBooks book);
-        BooksDTO Create(ICreateBooks book);
+        Task<ActionResult> Update(Books book);
+        Task<ActionResult> Create(Books book);
         // void Remove(int id);
     }
 }

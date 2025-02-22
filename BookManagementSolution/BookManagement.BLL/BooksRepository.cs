@@ -1,4 +1,5 @@
 using System;
+using System.Web.Mvc;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using BookManagement.DAL.Data;
@@ -52,7 +53,7 @@ namespace BookManagement.BLL
             _context.SaveChanges();
         }
 
-        public async Task<ActionResult> Create([FromBody] Books bookBody)
+        public async Task<ActionResult> Create(Books bookBody)
         {
             var book = this.GetByTitle(bookBody.Title);
 
