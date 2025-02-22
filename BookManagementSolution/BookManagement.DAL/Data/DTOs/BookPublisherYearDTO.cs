@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BookManagement.DAL.Data.DTOs
 {
-    public class BaseDTO
+    public class BookPublisherYearDTO
     {
+        public DateTime PublicationYear { get; set; }
     }
 }

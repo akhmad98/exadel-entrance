@@ -10,7 +10,11 @@ namespace BookManagement.BLL.Interfaces
 {
     public interface IBRepository : IRepository<Books>
     {
-        // Books GetById(int id);
-        // void Update(Books books);
+        BooksDTO GetById(int id);
+        private BooksDTO GetByTitle(int id);
+        // Books GetAllBookTitlesFromMostToLess();
+        BooksDTO Update(ICreateBooks book);
+        BooksDTO Create(ICreateBooks book);
+        // void Remove(int id);
     }
 }
